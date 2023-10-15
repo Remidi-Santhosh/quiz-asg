@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Choice Question</title>
+    <script>
+        function checkAnswer() {
+            // Get the selected answer
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            // Check if an answer is selected
+            if (selectedAnswer) {
+                // Get the value of the selected answer
+                var userAnswer = selectedAnswer.value;
+
+                // Check the user's answer against the correct answer
+                if (userAnswer === "mumbai") {
+                    document.getElementById("result").innerHTML = "Correct! Mumbai is the largest city in India.";
+                } else {
+                    document.getElementById("result").innerHTML = "Incorrect. The correct answer is Mumbai.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please select an answer.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>4.Which is the largest city in India?</p>
+        <input type="radio" name="answer" value="delhi" id="option1">
+        <label for="option1">Delhi</label><br>
+
+        <input type="radio" name="answer" value="mumbai" id="option2">
+        <label for="option2">Mumbai</label><br>
+
+        <input type="radio" name="answer" value="kolkata" id="option3">
+        <label for="option3">Kolkata</label><br>
+
+        <input type="radio" name="answer" value="chennai" id="option4">
+        <label for="option4">Chennai</label><br>
+
+        <input type="button" value="Submit" onclick="checkAnswer()">
+    </form>
+    <div id="result"></div>
+</body>
+</html>

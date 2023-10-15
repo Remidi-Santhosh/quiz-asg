@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Choice Question</title>
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                var userAnswer = selectedAnswer.value;
+                if (userAnswer === "New Delhi") {
+                    document.getElementById("result").innerHTML = "Correct!";
+                } else {
+                    document.getElementById("result").innerHTML = "Incorrect. The correct answer is New Delhi.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please select an answer.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>2.What is the capital of India ?</p>
+        <input type="radio" name="answer" value="Telangana" id="option1">
+        <label for="option1">Telangana</label><br>
+
+        <input type="radio" name="answer" value="london" id="option2">
+        <label for="option2">London</label><br>
+
+        <input type="radio" name="answer" value="berlin" id="option3">
+        <label for="option3">Berlin</label><br>
+
+        <input type="radio" name="answer" value="New Delhi" id="option4">
+        <label for="option4">New Delhi</label><br>
+
+        <input type="button" value="Submit" onclick="checkAnswer()">
+    </form>
+    <div id="result"></div>
+</body>
+</html>

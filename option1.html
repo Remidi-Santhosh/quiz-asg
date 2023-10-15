@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Choice Question</title>
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                var userAnswer = selectedAnswer.value;
+                if (userAnswer === "jupiter") {
+                    document.getElementById("result").innerHTML = "Correct! Jupiter is the largest planet in our solar system.";
+                } else {
+                    document.getElementById("result").innerHTML = "Incorrect. The correct answer is Jupiter.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please select an answer.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>1.What is the largest planet in our solar system?</p>
+        <input type="radio" name="answer" value="earth" id="option1">
+        <label for="option1">Earth</label><br>
+
+        <input type="radio" name="answer" value="jupiter" id="option2">
+        <label for="option2">Jupiter</label><br>
+
+        <input type="radio" name="answer" value="mars" id="option3">
+        <label for="option3">Mars</label><br>
+
+        <input type="radio" name="answer" value="venus" id="option4">
+        <label for="option4">Venus</label><br>
+
+        <input type="button" value="Submit" onclick="checkAnswer()">
+    </form>
+    <div id="result"></div>
+</body>
+</html>

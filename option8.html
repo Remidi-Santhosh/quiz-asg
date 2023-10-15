@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Choice Question</title>
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (selectedAnswer) {
+                var userAnswer = selectedAnswer.value;
+
+                if (userAnswer === "timbernerslee") {
+                    document.getElementById("result").innerHTML = "Correct! Tim Berners-Lee played a key role in the development of HTML and the World Wide Web.";
+                } else {
+                    document.getElementById("result").innerHTML = "Incorrect. The correct answer is Tim Berners-Lee.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please select an answer.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>8.Who played a key role in the development of HTML and the World Wide Web?</p>
+        <input type="radio" name="answer" value="alanTuring" id="option1">
+        <label for="option1">Alan Turing</label><br>
+
+        <input type="radio" name="answer" value="timbernerslee" id="option2">
+        <label for="option2">Tim Berners-Lee</label><br>
+
+        <input type="radio" name="answer" value="linustorvalds" id="option3">
+        <label for="option3">Linus Torvalds</label><br>
+
+        <input type="radio" name="answer" value="markzuckerberg" id="option4">
+        <label for="option4">Mark Zuckerberg</label><br>
+
+        <input type="button" value="Submit" onclick="checkAnswer()">
+    </form>
+    <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Choice Question</title>
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (selectedAnswer) {
+                var userAnswer = selectedAnswer.value;
+
+                if (userAnswer === "uttarpradesh") {
+                    document.getElementById("result").innerHTML = "Correct! Uttar Pradesh is the most populous state in India.";
+                } else {
+                    document.getElementById("result").innerHTML = "Incorrect. The correct answer is Uttar Pradesh.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please select an answer.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>5.Which is the most populous state in India?</p>
+        <input type="radio" name="answer" value="maharashtra" id="option1">
+        <label for="option1">Maharashtra</label><br>
+
+        <input type="radio" name="answer" value="uttarpradesh" id="option2">
+        <label for="option2">Uttar Pradesh</label><br>
+
+        <input type="radio" name="answer" value="bihar" id="option3">
+        <label for="option3">Bihar</label><br>
+
+        <input type="radio" name="answer" value="westbengal" id="option4">
+        <label for="option4">West Bengal</label><br>
+
+        <input type="button" value="Submit" onclick="checkAnswer()">
+    </form>
+    <div id="result"></div>
+</body>
+</html>

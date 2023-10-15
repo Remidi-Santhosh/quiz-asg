@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Choice Question</title>
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (selectedAnswer) {
+                var userAnswer = selectedAnswer.value;
+                if (userAnswer === "peacock") {
+                    document.getElementById("result").innerHTML = "Correct! The Indian national bird is the Peacock.";
+                } else {
+                    document.getElementById("result").innerHTML = "Incorrect. The correct answer is Peacock.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please select an answer.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>3.Which is the Indian national bird?</p>
+        <input type="radio" name="answer" value="parrot" id="option1">
+        <label for="option1">Parrot</label><br>
+
+        <input type="radio" name="answer" value="crow" id="option2">
+        <label for="option2">Crow</label><br>
+
+        <input type="radio" name="answer" value="peacock" id="option3">
+        <label for="option3">Peacock</label><br>
+
+        <input type="radio" name="answer" value="penguin" id="option4">
+        <label for="option4">Penguin</label><br>
+
+        <input type="button" value="Submit" onclick="checkAnswer()">
+    </form>
+    <div id="result"></div>
+</body>
+</html>

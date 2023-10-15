@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Choice Question</title>
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (selectedAnswer) {
+                var userAnswer = selectedAnswer.value;
+
+                if (userAnswer === "dangal") {
+                    document.getElementById("result").innerHTML = "Correct! 'Dangal' is one of the highest-grossing movies in India.";
+                } else {
+                    document.getElementById("result").innerHTML = "Incorrect. The correct answer is 'Dangal'.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please select an answer.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>6.Which movie collected the most money in India?</p>
+        <input type="radio" name="answer" value="dangal" id="option1">
+        <label for="option1">Dangal</label><br>
+
+        <input type="radio" name="answer" value="baahubali2" id="option2">
+        <label for="option2">Baahubali 2: The Conclusion</label><br>
+
+        <input type="radio" name="answer" value="pk" id="option3">
+        <label for="option3">PK</label><br>
+
+        <input type="radio" name="answer" value="bajrangibhaijaan" id="option4">
+        <label for="option4">Bajrangi Bhaijaan</label><br>
+
+        <input type="button" value="Submit" onclick="checkAnswer()">
+    </form>
+    <div id="result"></div>
+</body>
+</html>

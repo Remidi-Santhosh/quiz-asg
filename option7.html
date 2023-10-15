@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Choice Question</title>
+    <script>
+        function checkAnswer() {
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (selectedAnswer) {
+                var userAnswer = selectedAnswer.value;
+
+                if (userAnswer === "tomhanks") {
+                    document.getElementById("result").innerHTML = "Correct! Tom Hanks is one of the most popular actors in the world.";
+                } else {
+                    document.getElementById("result").innerHTML = "Incorrect. The correct answer is Tom Hanks.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please select an answer.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>7.Who is considered one of the most popular actors in the world?</p>
+        <input type="radio" name="answer" value="bradpitt" id="option1">
+        <label for="option1">Brad Pitt</label><br>
+
+        <input type="radio" name="answer" value="tomhanks" id="option2">
+        <label for "option2">Tom Hanks</label><br>
+
+        <input type="radio" name="answer" value="leonardodicaprio" id="option3">
+        <label for="option3">Leonardo DiCaprio</label><br>
+
+        <input type="radio" name="answer" value="dwaynejohnson" id="option4">
+        <label for="option4">Dwayne Johnson (The Rock)</label><br>
+
+        <input type="button" value="Submit" onclick="checkAnswer()">
+    </form>
+    <div id="result"></div>
+</body>
+</html>
